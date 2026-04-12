@@ -1,0 +1,9 @@
+﻿#常量池
+
+
+#隐私配置环境变量
+EXTRA_ENV_CONFIG ='ENV_CONFIG'
+#项目路由前缀
+APP_URL_PREFIX='/APP'
+#短信验证码有效期
+SMS_CODE_RXPIRE=300
