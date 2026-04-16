@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欧阳曾锦培 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+
+        body {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 8mm 10mm;
+            background: white;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .top-left {
+            flex: 1;
+        }
+
+        .top-right {
+            width: 150px;
+            height: 200px;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fafafa;
+            overflow: hidden;
+        }
+
+        .top-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 4px;
+            color: #222;
+        }
+
+        .base-info {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .blue-divider {
+            height: 2px;
+            background-color: #2563eb;
+            margin: 12px 0;
+            border-radius: 1px;
+        }
+
+        .section {
+            margin-bottom: 12px;
+        }
+
+        .section h3 {
+            font-size: 16px;
+            color: #2563eb;
+            margin-bottom: 6px;
+            padding-left: 6px;
+            border-left: 4px solid #2563eb;
+        }
+
+        ul {
+            padding-left: 18px;
+            line-height: 1.4;
+        }
+
+        li {
+            margin-bottom: 3px;
+        }
+
+        .project-content {
+            line-height: 1.5;
+        }
+
+        .self-intro {
+            line-height: 1.5;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top">
+        <div class="top-left">
+            <h1>欧阳曾锦培</h1>
+            <div class="base-info">
+                东莞理工学院 | 软件工程 | 大三<br>
+                求职意向：Python 后端开发实习，agennt开发实习
+            </div>
+        </div>
+        <div class="top-right">
+            <!-- 正确路径：/static/photo.jpg -->
+            <img src="/static/photo.jpg" alt="个人照片">
+        </div>
+    </div>
+
+    <div class="blue-divider"></div>
+
+    <div class="section">
+        <h3>自我介绍</h3>
+        <p class="self-intro">
+            本人为东莞理工学院大三软件工程学生，主攻 Python 后端开发，熟悉 Flask、FastAPI 框架、MySQL 与 Redis。
+            独立完成校园论坛与商城秒杀系统，具备后端接口开发、调试及问题排查能力。学习能力强，做事踏实，希望在实习中提升工程实践能力。
+        </p>
+    </div>
+
+    <div class="blue-divider"></div>
+
+    <div class="section">
+        <h3>项目经验：校园计算机交流论坛</h3>
+        <div class="project-content">
+            <strong>技术栈：</strong> Python + Flask + MySQL + Redis
+            <strong>&nbsp;&nbsp;&nbsp;开发角色：</strong> 独立后端开发<br><br>
+            项目为面向高校学生的技术交流平台，包含用户登录、文章发布、多级评论、点赞收藏、频道管理等功能，为稳定的前后端分离后端服务。<br><br>
+            <ul>
+                <li>基于 Flask 搭建项目，开发文章、评论、用户等 20+ 业务接口</li>
+                <li>设计 MySQL 数据表，利用事务保证点赞、评论等数据一致性</li>
+                <li>实现主评论与子评论体系，支持计数、点赞与分页展示</li>
+                <li>使用 Redis 缓存热点数据，处理缓存穿透、雪崩、击穿等问题</li>
+                <li>配置 Redis RDB+AOF 持久化，完成接口测试与异常处理</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="blue-divider"></div>
+
+    <div class="section">
+        <h3>项目经验：商城秒杀系统</h3>
+        <div class="project-content">
+            <strong>技术栈：</strong> Python + FastAPI + MySQL + Redis + RabbitMQ
+            <strong>&nbsp;&nbsp;&nbsp;开发角色：</strong> 独立后端开发<br><br>
+            基于 FastAPI 异步高并发特性实现秒杀系统，解决高并发下库存超卖、流量冲击、数据一致性问题。<br><br>
+            <ul>
+                <li>使用 FastAPI 异步接口提升并发处理能力，自动参数校验与文档</li>
+                <li>通过 Redis+Lua 原子扣减库存，避免超卖，保证数据安全</li>
+                <li>接入 RabbitMQ 异步处理订单，实现削峰填谷与系统解耦</li>
+                <li>使用连接池优化数据库与缓存，实现限流与幂等性处理</li>
+                <li>支撑高并发秒杀场景，保证系统稳定与数据正确</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="blue-divider"></div>
+
+    <div class="section">
+        <h3>专业技能</h3>
+        <ul>
+            <li>熟练使用 Python 进行后端开发，代码规范、逻辑清晰</li>
+            <li>熟练使用 Flask、FastAPI 搭建项目与开发 RESTful API</li>
+            <li>熟练使用 MySQL 数据表设计、事务、索引与联表查询</li>
+            <li>熟练使用 Redis 实现缓存、分布式锁与高并发优化</li>
+            <li>掌握缓存三大问题解决方案，了解 Redis 持久化与集群</li>
+            <li>了解 RabbitMQ 消息队列，可实现异步任务处理</li>
+            <li>熟悉前后端分离开发，可独立完成接口开发、调试与联调</li>
+        </ul>
+    </div>
+
+</body>
+</html>

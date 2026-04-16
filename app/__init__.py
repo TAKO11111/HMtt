@@ -7,6 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 from redis import StrictRedis
 from common.utils.converters import register_converters
 from flask_migrate import Migrate
+from flask_cors import CORS
 
 #项目路径D:\flaskproject
 BASE_PATH =os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -42,14 +43,21 @@ def register_extensions(app:Flask):
                          db=app.config.get("REDIS_DB"),
                          password=app.config.get("REDIS_PASSWORD"),
                          decode_responses=True)
+    
+    #数据表
     Migrate(app,db)
     from common.models import user
+    from common.models import news
 
     #添加请求钩子
     from common.utils.midd import get_userinfo
     app.before_request(get_userinfo)
-       
+
+    #允许前端跨域访问
+    CORS(app,supports_credentials=True)
 #注册蓝图组件函数
 def register_blueprints(app:Flask):
     from app.resource.user import user_bp
     app.register_blueprint(user_bp)
+    from app.resource.news import news_bp
+    app.register_blueprint(news_bp)

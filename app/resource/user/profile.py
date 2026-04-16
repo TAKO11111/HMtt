@@ -1,6 +1,6 @@
 ﻿#操作用户信息接口
 from flask_restful import Resource
-from common.utils.decorators import logina_required
+from common.utils.decorators import login_required
 from common.models.user import User
 from sqlalchemy.orm import load_only
 from flask import g
@@ -13,7 +13,7 @@ from app import db
 class CurrentUserResource(Resource):
 #获取当前用户信息
     method_decorators={
-        "get":[logina_required]
+        "get":[login_required]
     }
     def get(self):
         user_id=g.user_id
@@ -31,7 +31,7 @@ class CurrentUserResource(Resource):
 class UserPhotoResource(Resource):
     #更新用户头像接口
     method_decorators={
-        "patch":[logina_required]
+        "patch":[login_required]
     }
     def patch(self):
         #获取参数

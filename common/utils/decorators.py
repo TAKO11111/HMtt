@@ -1,7 +1,7 @@
 ﻿# 强制装饰器
 import functools
 from  flask import g
-def logina_required(view_func):
+def login_required(view_func):
     @functools.wraps(view_func)
     def wrapper(*args,**kwargs):
         user_id=g.user_id

@@ -3,6 +3,6 @@ __pycache__/
 *.py[cod]
 .qiniu *
 .venv-1/
-config.py
+app/settings/config.py
 .DS_Store
 Thumbs.db

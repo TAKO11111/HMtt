@@ -37,6 +37,6 @@ class Relation(db.Model):
     
     id=db.Column(db.Integer,primary_key=True,doc='主键id')
     user_id=db.Column(db.Integer,doc='用户id')
-    author_id=db.Column(db.Integer,doc='作者id')
+    news_user_id=db.Column(db.Integer,doc='作者id')
     relation=db.Column(db.Integer,doc='关系')
     updata_time=db.Column(db.DateTime,default=datetime.now,doc='更新时间')

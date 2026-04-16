@@ -8,7 +8,12 @@ class DefaultConfig(object):
     RESTFUL_JSON ={"ensure_ascii":False}
     """mysql链接配置"""
     SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost:3306/flasktop"
-    
+    SQLALCHEMY_POOL_RECYCLE = 300
+    SQLALCHEMY_POOL_PRE_PING = True
+    SQLALCHEMY_ENGINE_OPTIONS = {
+    "pool_recycle": 300,
+    "pool_pre_ping": True
+    }
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     """redis链接配置"""
     REDIS_HOST ="localhost"
@@ -19,11 +24,13 @@ class DefaultConfig(object):
     JWT_SECRET = "927f6c8e5d37b4a9018f7e2d51c63b0a7e8d2f9c6104a3b5782e1d6c9f0a587b"
     JWT_LOGIN_EXPIRE = 2
     JWT_REFRESH_EXPIRE = 14
-    #云储存配置
+    "云储存配置"
     QINIU_AK = "HypkNoXIEUk6v8X9YYgMgW6etJABthObi-STfpdO"
     QINIU_SK = "BCyjpYBcg8ZJWsBXy0H6UH53l9_FnoWIEF0WLGAT"
     QINIU_BN = "takotoutiao"
     QINIU_CDN = "http://tde0isbgq.hn-bkt.clouddn.com/"
+    "跨域访问配置"
+    CORS_ORIGINS = "*"
 class DevelopmentConfig(DefaultConfig):
     """ 开发环境配置"""
     DEBUG = True 
