@@ -7,7 +7,7 @@ class DefaultConfig(object):
     #防止flask——restful模块返回json数据时中文乱码问题
     RESTFUL_JSON ={"ensure_ascii":False}
     """mysql链接配置"""
-    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:root@localhost:3306/flasktop"
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:123456@127.0.0.1:3306/flasktop?charset=utf8mb4&auth_plugin=mysql_native_password"
     SQLALCHEMY_POOL_RECYCLE = 300
     SQLALCHEMY_POOL_PRE_PING = True
     SQLALCHEMY_ENGINE_OPTIONS = {
